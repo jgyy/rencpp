@@ -1,0 +1,173 @@
+{
+  "story": {
+    "title": "The Mysterious Room",
+    "startNode": "start",
+    "nodes": [
+      {
+        "id": "start",
+        "text": "You wake up in a dimly lit room with no memory of how you got here. Your head feels foggy. There's a heavy wooden door to your left and a dusty window to your right. You notice a strange desk in the corner.",
+        "choices": [
+          {
+            "text": "Examine the desk more closely",
+            "target": "examine_desk"
+          },
+          {
+            "text": "Go through the wooden door",
+            "target": "door_path"
+          },
+          {
+            "text": "Look out the window",
+            "target": "window_path"
+          }
+        ]
+      },
+      {
+        "id": "examine_desk",
+        "text": "You approach the desk carefully. On top, you find an old journal and a rusty key. The journal contains cryptic notes about an 'escape route' and mentions 'the key opens everything.' This could be important.",
+        "choices": [
+          {
+            "text": "Take the key and try it on the door",
+            "target": "use_key"
+          },
+          {
+            "text": "Read more of the journal",
+            "target": "read_journal"
+          },
+          {
+            "text": "Ignore the items and try the window",
+            "target": "window_path"
+          }
+        ]
+      },
+      {
+        "id": "use_key",
+        "text": "With key in hand, you approach the wooden door. The key slides into the lock perfectly and turns with a satisfying click. The door swings open, revealing a dimly lit corridor beyond.",
+        "choices": [
+          {
+            "text": "Walk down the corridor into the unknown",
+            "target": "corridor_path"
+          },
+          {
+            "text": "Turn back and try the window instead",
+            "target": "window_path"
+          }
+        ]
+      },
+      {
+        "id": "read_journal",
+        "text": "You flip through the journal entries. One entry catches your eye: 'The corridor leads to two paths - left goes to the forest, right leads to the village. Only the village offers hope.' Another entry warns about 'the creature in the shadows.' You're starting to piece together something important.",
+        "choices": [
+          {
+            "text": "Use the key to open the door",
+            "target": "use_key"
+          },
+          {
+            "text": "Escape through the window",
+            "target": "window_path"
+          }
+        ]
+      },
+      {
+        "id": "door_path",
+        "text": "You approach the wooden door. It's locked, and you don't have a key. You hear strange sounds from beyond - perhaps footsteps? Maybe you should search for a key or try the window.",
+        "choices": [
+          {
+            "text": "Search the room for a key",
+            "target": "examine_desk"
+          },
+          {
+            "text": "Try the window instead",
+            "target": "window_path"
+          }
+        ]
+      },
+      {
+        "id": "window_path",
+        "text": "You struggle with the window latch, but it finally gives way. The window creaks open, and you see a garden three stories below. A thick vine runs down the wall - you might be able to climb it. It's risky but possible.",
+        "choices": [
+          {
+            "text": "Climb down the vine",
+            "target": "climb_vine"
+          },
+          {
+            "text": "Go back and search the room more thoroughly",
+            "target": "examine_desk"
+          }
+        ]
+      },
+      {
+        "id": "climb_vine",
+        "text": "You take a deep breath and begin climbing down the vine. It's tense and your heart pounds, but you're making progress. Halfway down, the vine suddenly snaps! You tumble into the garden below.",
+        "choices": [
+          {
+            "text": "Check yourself for injuries",
+            "target": "garden_injured"
+          }
+        ]
+      },
+      {
+        "id": "garden_injured",
+        "text": "You limp through the garden, bruised but alive. Ahead, you see an ornate gate leading out of the estate. To your left, a path leads deeper into the forest. You need to decide quickly - you hear dogs barking in the distance.",
+        "choices": [
+          {
+            "text": "Head toward the gate and escape",
+            "target": "escape_ending"
+          },
+          {
+            "text": "Hide in the forest",
+            "target": "forest_ending"
+          }
+        ]
+      },
+      {
+        "id": "corridor_path",
+        "text": "You walk down the corridor, your footsteps echoing against the stone walls. The darkness is thick, but your eyes adjust. At the end, you find two archways: one left leading to a cold breeze (the forest), one right with distant voices (the village). The journal's words come back to you.",
+        "choices": [
+          {
+            "text": "Take the left path toward the forest",
+            "target": "forest_choice"
+          },
+          {
+            "text": "Take the right path toward the village",
+            "target": "village_choice"
+          }
+        ]
+      },
+      {
+        "id": "forest_choice",
+        "text": "You venture into the dark forest. The trees loom overhead, and strange sounds surround you. After hours of wandering, exhausted and lost, you collapse at the base of an ancient oak tree.",
+        "choices": [
+          {
+            "text": "Accept your fate",
+            "target": "forest_ending"
+          }
+        ]
+      },
+      {
+        "id": "village_choice",
+        "text": "The sounds grow louder as you approach. Warm light spills from windows - it's a small village! You see people moving about, smoke rising from chimneys. Safety at last! You stumble forward and a villager spots you, rushing to help.",
+        "choices": [
+          {
+            "text": "Accept help from the villager",
+            "target": "village_ending"
+          }
+        ]
+      },
+      {
+        "id": "escape_ending",
+        "text": "You push through the ornate gate and keep running. The estate fades behind you, and dawn breaks on the horizon. You're free! You made it out and survived. Though you still don't remember how you got into that room, you're grateful to have escaped.\n\nTHE END - Freedom Achieved!",
+        "choices": []
+      },
+      {
+        "id": "village_ending",
+        "text": "The villagers take you in and help you recover. Over tea and warm bread, they tell you about the old estate - a place with a dark history. You're safe now, with new friends to help you figure out your past.\n\nTHE END - You Found Help!",
+        "choices": []
+      },
+      {
+        "id": "forest_ending",
+        "text": "As you drift off to sleep under the stars, a search party from the village finds you. They were looking for others who had disappeared from the estate. You're rescued and brought to safety.\n\nTHE END - Rescued from the Wild!",
+        "choices": []
+      }
+    ]
+  }
+}

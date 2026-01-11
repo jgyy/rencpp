@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RCC>
+    <qresource prefix="/">
+        <file>../qml/main.qml</file>
+        <file>../qml/GameScreen.qml</file>
+        <file>../qml/StoryView.qml</file>
+        <file>../qml/ChoiceButton.qml</file>
+        <file>stories/sample_story.json</file>
+    </qresource>
+</RCC>
