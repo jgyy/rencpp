@@ -84,6 +84,41 @@ QString StoryLoader::getStartNodeId(const QString &filePath, QString &errorMsg)
     return startNode;
 }
 
+QString StoryLoader::getStoryTitle(const QString &filePath, QString &errorMsg)
+{
+    errorMsg.clear();
+
+    QFile file(filePath);
+    if (!file.open(QIODevice::ReadOnly)) {
+        errorMsg = "Failed to open story file: " + filePath;
+        return QString();
+    }
+
+    QByteArray data = file.readAll();
+    file.close();
+
+    QJsonDocument doc = QJsonDocument::fromJson(data);
+    if (!doc.isObject()) {
+        errorMsg = "Invalid JSON format in story file";
+        return QString();
+    }
+
+    QJsonObject root = doc.object();
+    QJsonObject story = root["story"].toObject();
+
+    if (story.isEmpty()) {
+        errorMsg = "No 'story' object found in JSON file";
+        return QString();
+    }
+
+    QString title = story["title"].toString();
+    if (title.isEmpty()) {
+        title = "Text Adventure Game";
+    }
+
+    return title;
+}
+
 StoryNode* StoryLoader::parseNode(const QJsonObject &nodeObj)
 {
     QString id = nodeObj["id"].toString();
@@ -118,5 +153,21 @@ Choice* StoryLoader::parseChoice(const QJsonObject &choiceObj)
         return nullptr;
     }
 
-    return new Choice(text, target);
+    QMap<QString, int> statChanges;
+    if (choiceObj.contains("stats")) {
+        QJsonObject statsObj = choiceObj["stats"].toObject();
+        for (auto it = statsObj.constBegin(); it != statsObj.constEnd(); ++it) {
+            statChanges[it.key()] = it.value().toInt();
+        }
+    }
+
+    QStringList itemsGained;
+    if (choiceObj.contains("items")) {
+        QJsonArray itemsArray = choiceObj["items"].toArray();
+        for (const QJsonValue &itemValue : itemsArray) {
+            itemsGained.append(itemValue.toString());
+        }
+    }
+
+    return new Choice(text, target, statChanges, itemsGained);
 }

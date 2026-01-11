@@ -13,6 +13,7 @@ class StoryLoader
 public:
     static QMap<QString, StoryNode*> loadFromJson(const QString &filePath, QString &errorMsg);
     static QString getStartNodeId(const QString &filePath, QString &errorMsg);
+    static QString getStoryTitle(const QString &filePath, QString &errorMsg);
 
 private:
     static StoryNode* parseNode(const QJsonObject &nodeObj);

@@ -5,6 +5,6 @@
         <file>../qml/GameScreen.qml</file>
         <file>../qml/StoryView.qml</file>
         <file>../qml/ChoiceButton.qml</file>
-        <file>stories/sample_story.json</file>
+        <file>stories/story.json</file>
     </qresource>
 </RCC>

@@ -7,6 +7,8 @@
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QLabel>
+#include <QPropertyAnimation>
+#include <QSequentialAnimationGroup>
 #include "gameengine.h"
 
 class MainWindow : public QMainWindow
@@ -23,9 +25,14 @@ private slots:
     void onCanGoBackChanged();
     void onChoiceClicked();
     void onGameEnded(const QString &endingText);
+    void onGameOver(const QString &reason);
     void onErrorOccurred(const QString &error);
     void onBackClicked();
     void onRestartClicked();
+    void onStatsChanged();
+    void onInventoryChanged();
+    void onProgressChanged();
+    void animateStoryText();
 
 private:
     void updateUI();
@@ -38,6 +45,15 @@ private:
     QPushButton *m_backButton;
     QPushButton *m_restartButton;
     QLabel *m_endingLabel;
+    QLabel *m_titleLabel;
+
+    QLabel *m_statsLabel;
+    QLabel *m_progressLabel;
+    QLabel *m_inventoryLabel;
+    QLabel *m_achievementsLabel;
+
+    QSequentialAnimationGroup *m_animationGroup;
+    QPropertyAnimation *m_storyFadeAnimation;
 };
 
 #endif

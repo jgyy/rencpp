@@ -78,7 +78,7 @@ rencpp_autogen/timestamp: CMakeFiles/rencpp.dir/compiler_depend.ts
 
 rencpp_autogen/3YJK5W5UP7/qrc_stories.cpp: /home/jegoh/Documents/repo/rencpp/resources/stories.qrc
 rencpp_autogen/3YJK5W5UP7/qrc_stories.cpp: CMakeFiles/rencpp_autogen.dir/AutoRcc_stories_3YJK5W5UP7_Info.json
-rencpp_autogen/3YJK5W5UP7/qrc_stories.cpp: /home/jegoh/Documents/repo/rencpp/resources/stories/sample_story.json
+rencpp_autogen/3YJK5W5UP7/qrc_stories.cpp: /home/jegoh/Documents/repo/rencpp/resources/stories/story.json
 rencpp_autogen/3YJK5W5UP7/qrc_stories.cpp: /usr/lib/qt5/bin/rcc
 rencpp_autogen/3YJK5W5UP7/qrc_stories.cpp: /usr/lib/qt5/bin/rcc
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/jegoh/Documents/repo/rencpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Automatic RCC for resources/stories.qrc"
