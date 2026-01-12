@@ -1,18 +1,20 @@
-#include <QApplication>
-#include <QProcessEnvironment>
 #include "gameengine.h"
 #include "mainwindow.h"
+#include <QApplication>
+#include <QProcessEnvironment>
 
-int main(int argc, char *argv[])
-{
-    qputenv("QT_QPA_PLATFORM", "xcb");
+int main(int argc, char *argv[]) {
+  qputenv("QT_QPA_PLATFORM", "xcb");
 
-    QApplication app(argc, argv);
+  QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+  QApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
 
-    GameEngine gameEngine;
+  QApplication app(argc, argv);
 
-    MainWindow window(&gameEngine);
-    window.show();
+  GameEngine gameEngine;
 
-    return app.exec();
+  MainWindow window(&gameEngine);
+  window.show();
+
+  return app.exec();
 }

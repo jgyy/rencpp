@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/rencpp.dir/link.d"
   "CMakeFiles/rencpp_autogen.dir/AutogenUsed.txt"
   "CMakeFiles/rencpp_autogen.dir/ParseCache.txt"
   "rencpp_autogen"

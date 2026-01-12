@@ -4,10 +4,13 @@
 	"CMAKE_CURRENT_BINARY_DIR" : "/home/jegoh/Documents/repo/rencpp/build",
 	"CMAKE_CURRENT_SOURCE_DIR" : "/home/jegoh/Documents/repo/rencpp",
 	"CMAKE_SOURCE_DIR" : "/home/jegoh/Documents/repo/rencpp",
-	"CROSS_CONFIG" : false,
 	"GENERATOR" : "Unix Makefiles",
 	"INCLUDE_DIR" : "/home/jegoh/Documents/repo/rencpp/build/rencpp_autogen/include",
-	"INPUTS" : [ "/home/jegoh/Documents/repo/rencpp/resources/stories/story.json" ],
+	"INPUTS" : 
+	[
+		"/home/jegoh/Documents/repo/rencpp/resources/stories/story_part2.json",
+		"/home/jegoh/Documents/repo/rencpp/resources/stories/story_part1.json"
+	],
 	"LOCK_FILE" : "/home/jegoh/Documents/repo/rencpp/build/CMakeFiles/rencpp_autogen.dir/AutoRcc_stories_3YJK5W5UP7_Lock.lock",
 	"MULTI_CONFIG" : false,
 	"OPTIONS" : [ "-name", "stories" ],
@@ -17,6 +20,5 @@
 	"RCC_LIST_OPTIONS" : [ "--list" ],
 	"SETTINGS_FILE" : "/home/jegoh/Documents/repo/rencpp/build/CMakeFiles/rencpp_autogen.dir/AutoRcc_stories_3YJK5W5UP7_Used.txt",
 	"SOURCE" : "/home/jegoh/Documents/repo/rencpp/resources/stories.qrc",
-	"USE_BETTER_GRAPH" : false,
 	"VERBOSITY" : 0
 }

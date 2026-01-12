@@ -12,6 +12,7 @@ class StoryLoader
 {
 public:
     static QMap<QString, StoryNode*> loadFromJson(const QString &filePath, QString &errorMsg);
+    static QMap<QString, StoryNode*> loadFromMultipleJson(const QStringList &filePaths, QString &errorMsg);
     static QString getStartNodeId(const QString &filePath, QString &errorMsg);
     static QString getStoryTitle(const QString &filePath, QString &errorMsg);
 

@@ -37,8 +37,12 @@ private slots:
 private:
     void updateUI();
     void clearChoiceButtons();
+    void keyPressEvent(QKeyEvent *event) override;
+    void selectChoice(int index);
+    void highlightSelectedChoice();
 
     GameEngine *m_gameEngine;
+    int m_selectedChoiceIndex = -1;
     QTextEdit *m_storyDisplay;
     QVBoxLayout *m_choicesLayout;
     QWidget *m_choicesContainer;
@@ -54,6 +58,9 @@ private:
 
     QSequentialAnimationGroup *m_animationGroup;
     QPropertyAnimation *m_storyFadeAnimation;
+
+    int m_lastHealth = 100;
+    bool m_wasHealthZero = false;
 };
 
 #endif
